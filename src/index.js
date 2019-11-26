@@ -1,16 +1,17 @@
-const path = require('path')
-const Koa = require('koa')
-const koaBody = require('koa-body')
-const cors = require('@koa/cors')
-const koaJson = require('koa-json')
-const helmet = require('koa-helmet')
-const static = require('koa-static')
+import path from 'path'
+import Koa from 'koa'
+import koaBody from 'koa-body'
+import cors from '@koa/cors'
+import koaJson from 'koa-json'
+import helmet from 'koa-helmet'
+import koaStatic from 'koa-static'
+
+import router from './routes'
 
 const app = new Koa()
 
-const router = require('./routes/index')
 
-app.use(static(path.join(__dirname, '../public')))
+app.use(koaStatic(path.join(__dirname, '../public')))
 app.use(helmet())
 app.use(koaBody())
 app.use(cors())
@@ -18,4 +19,4 @@ app.use(koaJson())
 
 app.use(router())
 app.listen(9000)
-console.log(232)
+console.log(2432)
