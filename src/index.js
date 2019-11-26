@@ -19,4 +19,3 @@ app.use(koaJson())
 
 app.use(router())
 app.listen(9000)
-console.log(2432)
