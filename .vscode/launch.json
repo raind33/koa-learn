@@ -7,11 +7,16 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "启动程序",
+      "name": "nodemon",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+      "program": "${workspaceFolder}/src/index.js",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "runtimeArgs": ["--exec", "babel-node"],
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/index.js"
+      ]
     }
   ]
 }
